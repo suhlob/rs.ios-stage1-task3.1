@@ -26,10 +26,6 @@ NSString *TEXTFIELD_PLACEHOLDER = @"0..255";
     [self accessibilityIdentifier];
 }
 
-- (void)viewWillLayoutSubviews{
-    [self.buttonProcess setFrame:CGRectMake(self.view.bounds.size.width / 2 - 50, 260, 100, 40)];
-}
-
 #pragma mark - method for setting up uiview as an color palette
 
 - (void)setupColorView{
@@ -82,7 +78,7 @@ NSString *TEXTFIELD_PLACEHOLDER = @"0..255";
 - (void)setupButton{
     self.buttonProcess = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2 - 50, 260, 100, 40)];
     [self.buttonProcess setTitle:@"Process" forState:UIControlStateNormal];
-    [self.buttonProcess setTitleColor:UIColor.systemBlueColor forState:UIControlStateNormal];
+    [self.buttonProcess setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
     [self.buttonProcess addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.buttonProcess];
 }
