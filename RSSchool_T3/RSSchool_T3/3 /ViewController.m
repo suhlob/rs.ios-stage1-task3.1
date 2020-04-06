@@ -26,6 +26,10 @@ NSString *TEXTFIELD_PLACEHOLDER = @"0..255";
     [self accessibilityIdentifier];
 }
 
+- (void)viewWillLayoutSubviews{
+    [self.buttonProcess setFrame:CGRectMake(self.view.bounds.size.width / 2 - 50, 260, 100, 40)];
+}
+
 #pragma mark - method for setting up uiview as an color palette
 
 - (void)setupColorView{
@@ -108,7 +112,7 @@ NSString *TEXTFIELD_PLACEHOLDER = @"0..255";
     float blue = [self.textFieldBlue.text floatValue];
 
     if (
-        !self.textFieldRed.text.length||
+        !self.textFieldRed.text.length ||
         !self.textFieldGreen.text.length ||
         !self.textFieldBlue.text.length ||
         red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255 ||
